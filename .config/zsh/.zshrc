@@ -1,0 +1,1 @@
+../../.config/dotfiles/pc/.config/zsh/.zshrc
