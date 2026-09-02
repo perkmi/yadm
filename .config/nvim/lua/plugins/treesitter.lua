@@ -1,7 +1,7 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
-  main = 'nvim-treesitter.config', -- ✅ Corrected module name
+  main = 'nvim-treesitter.config',
   opts = {
     ensure_installed = { "c", "hyprlang", "lua", "markdown", "markdown_inline", "query", "vim", "vimdoc" },
     auto_install = true,
@@ -9,8 +9,13 @@ return {
       enable = true,
       disable = { "c", "lua", "markdown", "markdown_inline", "query", "vim", "vimdoc" },
     },
-    indent = { -- ✅ Fixed typo: 'ndent' → 'indent'
+    indent = {
       enable = true,
     },
   },
+  vim.filetype.add({
+  extension = {
+    ["lua##template"] = "lua", -- For yadm templates to have syntax highlighting
+  },
+})
 }
