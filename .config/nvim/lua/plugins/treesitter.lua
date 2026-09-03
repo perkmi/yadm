@@ -13,9 +13,4 @@ return {
       enable = true,
     },
   },
-  vim.filetype.add({
-  extension = {
-    ["lua##template"] = "lua", -- For yadm templates to have syntax highlighting
-  },
-})
 }

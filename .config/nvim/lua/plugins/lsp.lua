@@ -90,8 +90,12 @@ return {
         }
 
         vim.filetype.add({
+            extension = {
+                ["lua##template"] = "lua", -- For yadm templates to have syntax highlighting
+            },
             pattern = {
                 ['.*/waybar/config'] = 'jsonc',
+                ['.*/waybar/config##template'] = 'jsonc',
                 ['.*/hypr/.*%.conf'] = 'hyprlang'
             },
         })
