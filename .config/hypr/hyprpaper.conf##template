@@ -1,0 +1,23 @@
+{% if yadm.hostname == "arch" %}
+wallpaper {
+    monitor = DP-1
+    path = ~/.config/hypr/mountain.png
+}
+wallpaper {
+    monitor = DP-3
+    path = ~/.config/hypr/mountain.png
+}
+{% endif %}
+{% if yadm.hostname == "archtop" %}
+wallpaper {
+    monitor = eDP-1
+    path = ~/.config/hypr/mountain.png
+}
+{% endif %}
+{% if yadm.hostname == "framework" %}
+wallpaper {
+    monitor = HDMI-A-1
+    path = ~/.config/hypr/mountain.png
+}
+{% endif %}
+splash = false
