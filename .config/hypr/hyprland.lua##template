@@ -26,9 +26,16 @@ local menu        = "walker"
 -------------------
 ---- AUTOSTART ----
 -------------------
-
 hl.on("hyprland.start", function () 
+{% if yadm.hostname == "arch" %}
   hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1 & $HOME/.config/waybar/reloadway.sh & fcitx5 & swaync & hyprpaper & otd-daemon & streamdeck -n & corectrl & copyq --start-server & hypridle & nm-applet & elephant")
+{% endif %}
+{% if yadm.hostname == "archtop" %}
+  hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1 & $HOME/.config/waybar/reloadway.sh & swaync & hyprpaper & copyq --start-server & hypridle & nm-applet & elephant")
+{% endif %}
+{% if yadm.hostname == "framework" %}
+  hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1 & $HOME/.config/waybar/reloadway.sh & swaync & hyprpaper & copyq --start-server & hypridle & nm-applet & elephant")
+{% endif %}
 end)
 
 -------------------------------
@@ -216,7 +223,9 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("brave-origin"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("alacritty -e nvim"))
+{% if yadm.hostname == "arch" %}
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("~/.config/hypr/scripts/audio_changer.py"))
+{% endif %}
 hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("fcitx5"))
 hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("nwg-bar"))
 hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp -w 0)" - | swappy -f -'))
