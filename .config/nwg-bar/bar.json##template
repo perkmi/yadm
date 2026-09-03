@@ -29,8 +29,8 @@
         {% if yadm.distro == "Arch" %}
         "exec": "systemctl -i poweroff",
         {% endif %}
-        "exec": "loginctl poweroff",
         {% if yadm.distro == "Gentoo" %}
+        "exec": "loginctl poweroff",
         {% endif %}
         "icon": "/usr/share/nwg-bar/images/system-shutdown.svg"
     }
