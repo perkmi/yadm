@@ -7,6 +7,9 @@
 hl.monitor({ output = "DP-1", mode = "2560x1440@75", position = "auto", scale = "auto" })
 hl.monitor({ output = "DP-3", mode = "2560x1440@75", position = "auto", scale = "auto" })
 {% endif %}
+{% if yadm.hostname == "archtop" %}
+hl.monitor({ output = "", mode = "preferred", position = "auto", scale = "auto" })
+{% endif %}
 {% if yadm.hostname == "framework" %}
 hl.monitor({ output = "HDMI-A-1", mode = "1920x1080@60", position = "auto", scale = "auto" })
 {% endif %}
