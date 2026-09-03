@@ -24,3 +24,7 @@ export OMNISHARPHOME="$XDG_CONFIG_HOME"/omnisharp
 export BROWSER="brave"
 export MANPAGER="nvim +Man!"
 export EDITOR="nvim"
+
+{% if yadm.distro == "Debian" %}
+alias yay="sudo nala upgrade --assume-yes"
+{% endif %}
