@@ -1,0 +1,38 @@
+[
+    {
+        "label": "Lock",
+        "exec": "hyprlock",
+        "icon": "/usr/share/nwg-bar/images/system-lock-screen.svg"
+    },
+    {
+        "label": "Logout",
+        {% if yadm.distro == "Arch" %}
+        "exec": "hyprctl dispatch hl.dsp.exit()",
+        {% endif %}
+        {% if yadm.distro == "Gentoo" %}
+        "exec": "hyprctl dispatch exit",
+        {% endif %}
+
+        "icon": "/usr/share/nwg-bar/images/system-log-out.svg"
+    },
+    {
+        "label": "Reboot",
+        {% if yadm.distro == "Arch" %}
+        "exec": "systemctl reboot",
+        {% endif %}
+        {% if yadm.distro == "Gentoo" %}
+        "exec": "loginctl reboot",
+        {% endif %}
+        "icon": "/usr/share/nwg-bar/images/system-reboot.svg"
+    },
+    {
+        "label": "Shutdown",
+        {% if yadm.distro == "Arch" %}
+        "exec": "systemctl -i poweroff",
+        {% endif %}
+        "exec": "loginctl poweroff",
+        {% if yadm.distro == "Gentoo" %}
+        {% endif %}
+        "icon": "/usr/share/nwg-bar/images/system-shutdown.svg"
+    }
+]
