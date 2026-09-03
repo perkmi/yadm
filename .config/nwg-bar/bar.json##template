@@ -12,7 +12,6 @@
         {% if yadm.distro == "Gentoo" %}
         "exec": "hyprctl dispatch exit",
         {% endif %}
-
         "icon": "/usr/share/nwg-bar/images/system-log-out.svg"
     },
     {
