@@ -8,6 +8,16 @@ wallpaper {
     path = ~/.config/hypr/mountain.png
 }
 {% endif %}
+{% if yadm.hostname == "gentoo" %}
+wallpaper {
+    monitor = DP-1
+    path = ~/.config/hypr/mountain.png
+}
+wallpaper {
+    monitor = DP-3
+    path = ~/.config/hypr/mountain.png
+}
+{% endif %}
 {% if yadm.hostname == "archtop" %}
 wallpaper {
     monitor = eDP-1

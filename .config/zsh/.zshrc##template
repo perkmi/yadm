@@ -72,14 +72,22 @@ alias obs="flatpak run com.obsproject.Studio"
 alias pixel='grim -g "$(slurp -p)" -t ppm - | magick - -format '%[pixel:p{0,0}]' txt:-'
 alias opencode='OPENCODE_ENABLE_EXA=1 opencode'
 
+{% if yadm.distro == "Arch" %}
 # load fast-syntax-highlighting
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-
 # load zsh-autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 # substring search
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+{% endif %}
+{% if yadm.distro == "Gentoo" %}
+# load fast-syntax-highlighting
+source /home/mikko/.config/zsh/fast-syntax-highlighting/F-Sy-H.plugin.zsh
+# load zsh-autosuggestions
+source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
+# substring search
+source /usr/share/zsh/site-functions/_zsh-history-substring-search
+{% endif %}
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down

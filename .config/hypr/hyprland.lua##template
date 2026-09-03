@@ -7,6 +7,10 @@
 hl.monitor({ output = "DP-1", mode = "2560x1440@75", position = "auto", scale = "auto" })
 hl.monitor({ output = "DP-3", mode = "2560x1440@75", position = "auto", scale = "auto" })
 {% endif %}
+{% if yadm.hostname == "gentoo" %}
+hl.monitor({ output = "DP-1", mode = "2560x1440@75", position = "auto", scale = "auto" })
+hl.monitor({ output = "DP-3", mode = "2560x1440@75", position = "auto", scale = "auto" })
+{% endif %}
 {% if yadm.hostname == "archtop" %}
 hl.monitor({ output = "", mode = "preferred", position = "auto", scale = "auto" })
 {% endif %}
@@ -29,6 +33,9 @@ local menu        = "walker"
 hl.on("hyprland.start", function () 
 {% if yadm.hostname == "arch" %}
   hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1 & $HOME/.config/waybar/reloadway.sh & fcitx5 & swaync & hyprpaper & otd-daemon & streamdeck -n & corectrl & copyq --start-server & hypridle & nm-applet & elephant")
+{% endif %}
+{% if yadm.hostname == "gentoo" %}
+  hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP /usr/lib/polkit-kde-authentication-agent-1 & $HOME/.config/waybar/reloadway.sh & fcitx5 & swaync & hyprpaper & otd-daemon & gentoo-pipewire-launcher & streamdeck -n & corectrl & copyq --start-server & hypridle & nm-applet & elephant")
 {% endif %}
 {% if yadm.hostname == "archtop" %}
   hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1 & $HOME/.config/waybar/reloadway.sh & swaync & hyprpaper & copyq --start-server & hypridle & nm-applet & elephant")
@@ -226,6 +233,9 @@ hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("alacritty -e nvim"))
 {% if yadm.hostname == "arch" %}
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("~/.config/hypr/scripts/audio_changer.py"))
 {% endif %}
+{% if yadm.hostname == "gentoo" %}
+hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("~/.config/hypr/scripts/audio_changer.py"))
+{% endif %}
 hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("fcitx5"))
 hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("nwg-bar"))
 hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp -w 0)" - | swappy -f -'))
@@ -307,11 +317,6 @@ hl.bind(mainMod .. " + END", hl.dsp.layout("fit toend"))
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
-
--- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
--- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
-
--- Example window rules that are useful
 
 local suppressMaximizeRule = hl.window_rule({
     -- Ignore maximize requests from all apps. You'll probably like this.
