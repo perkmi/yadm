@@ -10,22 +10,6 @@ function parse_git_branch() {
 }
 
 
-function ff480() {
-    if [ $# -ne 1 ]; then
-        echo "usage: ff480 input_file"
-        return 1
-    fi
-
-    local input_file="$1"
-    local name="${input_file%.*}"
-    local ext="${input_file##*.}"
-    local output_file="${name}.480p.${ext}"
-
-    echo "converting $input_file to $output_file at 480p..."
-
-    ffmpeg -i "$input_file" -vf "scale=-1:480,pad=width=ceil(iw/2)*2:height=480" -c:a copy "$output_file" < /dev/null
-}
-
 COLOR_USR=$'%B%F{blue}'
 COLOR_DIR=$'%B%F{yellow}'
 COLOR_DEF=$'%B%F{green}'
