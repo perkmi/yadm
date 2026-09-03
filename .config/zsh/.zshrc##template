@@ -59,7 +59,11 @@ alias svim='sudo -e'
 alias svi='sudo -e'
 alias -- -='cd -'
 alias ..='cd ..'
+{% if yadm.distro == "Debian" %}
+alias cat='batcat --paging=never --style=plain'
+{% else %}
 alias cat='bat --paging=never --style=plain'
+{% endif %}
 alias radeontop='radeontop -cT'
 alias clamdscan='clamdscan --multiscan --fdpass -v'
 alias yeet='yay -Rsc'
@@ -87,9 +91,19 @@ source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
 # substring search
 source /usr/share/zsh/site-functions/_zsh-history-substring-search
 {% endif %}
+{% if yadm.distro == "Debian" %}
+# load fast-syntax-highlighting
+source /home/mikko/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+# load zsh-autosuggestions
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# substring search
+source /home/mikko/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+{% endif %}
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
 
 # Created by `pipx` on 2024-03-17 18:13:29
 export PATH="$PATH:/home/mikko/.local/bin"
