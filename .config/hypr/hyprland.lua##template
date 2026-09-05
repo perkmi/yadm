@@ -4,12 +4,10 @@
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 {% if yadm.hostname == "arch" %}
-hl.monitor({ output = "DP-1", mode = "2560x1440@75", position = "auto", scale = "auto" })
-hl.monitor({ output = "DP-3", mode = "2560x1440@75", position = "auto", scale = "auto" })
+hl.monitor({ output = "DP-*", mode = "2560x1440@75", position = "auto", scale = "auto" })
 {% endif %}
 {% if yadm.hostname == "gentoo" %}
-hl.monitor({ output = "DP-1", mode = "2560x1440@75", position = "auto", scale = "auto" })
-hl.monitor({ output = "DP-3", mode = "2560x1440@75", position = "auto", scale = "auto" })
+hl.monitor({ output = "DP-*", mode = "2560x1440@75", position = "auto", scale = "auto" })
 {% endif %}
 {% if yadm.hostname == "archtop" %}
 hl.monitor({ output = "", mode = "preferred", position = "auto", scale = "auto" })
