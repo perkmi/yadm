@@ -5,7 +5,7 @@
 {% if yadm.hostname == "arch" %}
     "width": 2550,
 {% endif %}
-{% if yadm.hostname == "gentoo" %}
+{% if yadm.distro == "Gentoo" %}
     "width": 2550,
 {% endif %}
 {% if yadm.hostname == "archtop" %}
