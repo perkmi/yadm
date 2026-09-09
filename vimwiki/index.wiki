@@ -6,11 +6,15 @@ paru -S hypridle hyprlock swaync brave-bin nwg-bar zsh-fast-syntax-highlighting 
 
 = neovim =
 To build on debian:
+sudo nala install ninja-build gettext cmake curl build-essential git
+git clone https://github.com/neovim/neovim.git
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 cd build && cpack -G DEB && sudo dpkg -i nvim-linux-<arch>.deb
 
 = pfetch =
 To install on debian:
+git clone https://github.com/Un1q32/pfetch.git
+cd pfetch
 sudo mv pfetch /usr/bin
 
 = fastfetch =
