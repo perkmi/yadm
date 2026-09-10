@@ -72,3 +72,11 @@ sudo nala install zsh-autosuggestions
 cd .config/zsh
 git clone https://github.com/zsh-users/zsh-history-substring-search.git
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git
+
+= wireguard =
+sudo apt install wireguard
+
+sudo mv ~/wgs_client.conf /etc/wireguard/wg0.conf
+sudo chmod 600 /etc/wireguard/wg0.conf
+
+sudo wg-quick up wg0
