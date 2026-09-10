@@ -6,7 +6,7 @@ paru -S hypridle hyprlock swaync brave-bin nwg-bar zsh-fast-syntax-highlighting 
 
 = neovim =
 To build on debian:
-sudo nala install ninja-build gettext cmake curl build-essential git
+sudo nala install ninja-build gettext cmake curl build-essential git file
 git clone https://github.com/neovim/neovim.git
 cd neovim
 git checkout stable
@@ -65,3 +65,10 @@ Defaults   env_keep += "WAYLAND_DISPLAY"' | sudo tee /etc/sudoers.d/wayland
 
 = Laptop WiFi =
 install rtl8821ce-dkms-git from the AUR
+
+= zsh =
+for ubuntu/debian
+sudo nala install zsh-autosuggestions
+cd .config/zsh
+git clone https://github.com/zsh-users/zsh-history-substring-search.git
+git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git

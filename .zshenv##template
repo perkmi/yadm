@@ -28,3 +28,6 @@ export EDITOR="nvim"
 {% if yadm.distro == "Debian" %}
 alias yay="sudo nala upgrade --assume-yes"
 {% endif %}
+{% if yadm.distro == "Ubuntu" %}
+alias yay="sudo nala upgrade --assume-yes"
+{% endif %}
