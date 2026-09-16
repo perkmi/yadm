@@ -35,6 +35,25 @@
       "action": "edit",
       "resource": "/usr/include/*",
       "effect": "deny"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/Projects/*",
+      "effect": "allow"
+    },
+    {
+      "action": "websearch",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "lsp",
+      "resource": "*",
+      "effect": "allow"
     }
-  ]
+  ],
+  "websearch": {
+    "provider": "exa"
+  },
+  "lsp": true
 }
