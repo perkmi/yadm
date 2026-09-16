@@ -11,6 +11,9 @@
 {% if yadm.hostname == "archtop" %}
     "width": 1910,
 {% endif %}
+{% if yadm.hostname == "flip" %}
+    "width": 1910,
+{% endif %}
 {% if yadm.hostname == "framework" %}
     "width": 1910,
 {% endif %}
@@ -26,6 +29,10 @@
         "custom/separator",
 {% endif %}
 {% if yadm.hostname == "archtop" %}
+        "battery",
+        "custom/separator",
+{% endif %}
+{% if yadm.hostname == "flip" %}
         "battery",
         "custom/separator",
 {% endif %}
