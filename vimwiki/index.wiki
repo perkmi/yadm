@@ -80,3 +80,13 @@ sudo mv ~/wgs_client.conf /etc/wireguard/wg0.conf
 sudo chmod 600 /etc/wireguard/wg0.conf
 
 sudo wg-quick up wg0
+
+= qemu image resize =
+# Shrink to an absolute size (e.g., 64GB total)
+sudo qemu-img resize --shrink /var/lib/libvirt/images/win11.qcow2 64G
+
+# Add 20GB to the existing disk
+qemu-img resize /var/lib/libvirt/images/win11.qcow2 +20G
+
+# Expand to an absolute size (e.g., 500GB total)
+qemu-img resize /var/lib/libvirt/images/win11.qcow2 500G

@@ -42,6 +42,11 @@
       "effect": "allow"
     },
     {
+      "action": "external_directory",
+      "resource": "/tmp/*",
+      "effect": "allow"
+    },
+    {
       "action": "websearch",
       "resource": "*",
       "effect": "allow"
