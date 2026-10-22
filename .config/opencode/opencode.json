@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "ollama/qwen3.8:27b-mtp-q8_0",
+  "model": "ollama/qwen3.8:27b-mtp-abliterated-q8_0",
   "plugins": ["opencode-tps-meter"],
   "providers": {
     "ollama": {
@@ -10,6 +10,9 @@
       "models": {
         "qwen3.8:27b-mtp-q8_0": {
           "name": "Qwen3.8 27B (Ollama)"
+        },
+        "qwen3.8:27b-mtp-abliterated-q8_0": {
+          "name": "Qwen3.8 27B Abliterated (Ollama)"
         },
         "muse-glimmer:30b-q8_0-dflash": {
           "name": "Muse Glimmer (Ollama)"
